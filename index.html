@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link href="stylesheet.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title> Portfolio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8e298347dd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img class="logo" src="images/mylogo.png">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">achivements</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+            <div class ="header-text">
+                <p>CS student</p>
+                <h1>Hi , I am  <span>yuvaraj</span></h1>
+                <p>A budding full stack developer 
+                Aspiring <br> to learn new things </p>
+            </div>
+         </div>
+        </div>    
+    </div>
+    <!-- -----------------about------------------ -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/naruto 4.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>
+                        Hey! I am a tech enthusiast and a budding programmer. I'm currently dedicated in learn full stack developments. I Aspire to convert my ideas into code that is use full to the society.
+                        I've developed some small projects like 'IupacName to structure converter' and database oriented mathbot, where I've applied my coding prowess to develop solutions that make a positive impact.
+                        I am constantly learning new things and improving my skils to achive my aspiration. I believe in the power of continuous learning. Whether it's staying updated with the latest tech trends or exploring new frameworks, I'm committed to growing as a developer.
+                        I'm eager to connect with like-minded individuals, industry professionals, and mentors who share a passion for technology and development. Let's learn and grow together! Feel free to reach out for networking, collaboration, or just a good coding chat.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>Web devolopment<br></span>Html,Css,Javascript</li>
+                            <li><span>backend development<br></span>Nodejs and python</li>
+                            <li><span>Video editing<br></span>premier pro</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li><span>fresher<br></span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>High school<br></span>Lalaji mememorial omega international school</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -------------------services---------------------------- -->
+        <div id="services">
+            <div class="container">
+                    <h1 class="sub-title">My services</h1>
+                    <div class="services-list">
+                        <div>
+                            <i class="fa-solid fa-code"></i>
+                            <h2>Web design</h2>
+                            <p>Crafting seamless digital experiences through innovative web development solutions tailored to your unique business needs.</p>
+                            <a href="#">Learn more</a>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-photo-film"></i>
+                            <h2>photo shop</h2>
+                            <p>Transform your visuals into works of art with our online Photoshop service, where creativity meets convenience</p>
+                            <a href="#">Learn more</a>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-video"></i>
+                            <h2>video editing</h2>
+                            <p>Elevate your story with precision cuts and cinematic flair, where every frame is a masterpiece in motion.</p>
+                            <a href="#">Learn more</a>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+        <div id="Portfolio">
+            <div class="container">
+                <h2 class="sub-title">My Work</h2>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/wevdev.png">
+                        <div class="layer">
+                            <h3>Web development</h3>
+                            <p>I build my own portfolio website</p>
+                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/videoedit.png">
+                        <div class="layer">
+                            <h3>Video editing</h3>
+                            <p>Check out my youtube channel to see my works</p>
+                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/photoshop.png">
+                        <div class="layer">
+                            <h3>photo Editing</h3>
+                            <p>Check out my instagram handle to observe my editing skills</p>
+                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+</body>
+</html>
