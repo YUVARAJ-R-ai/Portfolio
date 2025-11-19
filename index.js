@@ -360,6 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(anim);
     }
 
+    document.getElementById('start-tour-btn').addEventListener('click', startTour);
+
     function startTour() {
         if(isTouring) return;
         isTouring = true;
