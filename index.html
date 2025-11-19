@@ -1,138 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-    <link href="stylesheet.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <title> Portfolio</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8e298347dd.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvaraj R | The Grand Line Portfolio</title>
+    <!-- Tailwind CSS for UI Layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js from CDN (Global access for simple integration) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Google Fonts: Cinzel for that Adventure/Anime vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img class="logo" src="images/mylogo.png">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">achivements</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">contact</a></li>
-                </ul>
-            </nav>
-            <div class ="header-text">
-                <p>CS student</p>
-                <h1>Hi , I am  <span>yuvaraj</span></h1>
-                <p>A budding full stack developer 
-                Aspiring <br> to learn new things </p>
-            </div>
-         </div>
-        </div>    
-    </div>
-    <!-- -----------------about------------------ -->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/naruto 4.jpg">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About me</h1>
-                    <p>
-                        Hey! I am a tech enthusiast and a budding programmer. I'm currently dedicated in learn full stack developments. I Aspire to convert my ideas into code that is use full to the society.
-                        I've developed some small projects like 'IupacName to structure converter' and database oriented mathbot, where I've applied my coding prowess to develop solutions that make a positive impact.
-                        I am constantly learning new things and improving my skils to achive my aspiration. I believe in the power of continuous learning. Whether it's staying updated with the latest tech trends or exploring new frameworks, I'm committed to growing as a developer.
-                        I'm eager to connect with like-minded individuals, industry professionals, and mentors who share a passion for technology and development. Let's learn and grow together! Feel free to reach out for networking, collaboration, or just a good coding chat.
-                    </p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('Education')">Education</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="Skills">
-                        <ul>
-                            <li><span>Web devolopment<br></span>Html,Css,Javascript</li>
-                            <li><span>backend development<br></span>Nodejs and python</li>
-                            <li><span>Video editing<br></span>premier pro</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="Experience">
-                        <ul>
-                            <li><span>fresher<br></span></li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="Education">
-                        <ul>
-                            <li><span>High school<br></span>Lalaji mememorial omega international school</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- -------------------services---------------------------- -->
-        <div id="services">
-            <div class="container">
-                    <h1 class="sub-title">My services</h1>
-                    <div class="services-list">
-                        <div>
-                            <i class="fa-solid fa-code"></i>
-                            <h2>Web design</h2>
-                            <p>Crafting seamless digital experiences through innovative web development solutions tailored to your unique business needs.</p>
-                            <a href="#">Learn more</a>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-photo-film"></i>
-                            <h2>photo shop</h2>
-                            <p>Transform your visuals into works of art with our online Photoshop service, where creativity meets convenience</p>
-                            <a href="#">Learn more</a>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-video"></i>
-                            <h2>video editing</h2>
-                            <p>Elevate your story with precision cuts and cinematic flair, where every frame is a masterpiece in motion.</p>
-                            <a href="#">Learn more</a>
-                        </div>
-                    </div>
 
+    <div id="loading">Generating World...</div>
+
+    <!-- 3D Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- UI Layer -->
+    <div id="ui-layer" class="flex flex-col justify-between p-6">
+        
+        <!-- Header / Profile -->
+        <div class="pointer-events-auto glass-panel rounded-xl p-6 max-w-md animate-fade-in-down">
+            <h1 class="text-3xl text-teal-400 font-bold font-adventure tracking-wider mb-1">YUVARAJ R</h1>
+            <p class="text-gray-300 text-sm mb-3">📍 India | Software Developer | Automation Enthusiast</p>
+            
+            <!-- TODO: Update these links with your contact information -->
+            <div class="flex gap-3 mb-4">
+                <a href="#" class="text-xs bg-teal-700 hover:bg-teal-600 text-white px-3 py-1 rounded-full transition">GitHub</a>
+                <a href="#" class="text-xs bg-teal-700 hover:bg-teal-600 text-white px-3 py-1 rounded-full transition">Email</a>
+                <a href="#" class="text-xs bg-teal-700 hover:bg-teal-600 text-white px-3 py-1 rounded-full transition">Phone</a>
+            </div>
+
+            <p class="text-gray-400 text-xs leading-relaxed">
+                Aspiring developer navigating the Grand Line of AI & IoT.
+            </p>
+            
+            <!-- Legend/Skills -->
+            <div class="mt-4 border-t border-gray-700 pt-3 grid grid-cols-2 gap-2 text-xs text-gray-400">
+                <div>⚡ Python, C++, Java</div>
+                <div>🌍 PostGIS, OSRM, QGIS</div>
+                <div>🐳 Docker, Linux</div>
+                <div>🤖 IoT, AI Agents</div>
             </div>
         </div>
-        <div id="Portfolio">
-            <div class="container">
-                <h2 class="sub-title">My Work</h2>
-                <div class="work-list">
-                    <div class="work">
-                        <img src="images/wevdev.png">
-                        <div class="layer">
-                            <h3>Web development</h3>
-                            <p>I build my own portfolio website</p>
-                            <a href="#"><i class="fa-solid fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/videoedit.png">
-                        <div class="layer">
-                            <h3>Video editing</h3>
-                            <p>Check out my youtube channel to see my works</p>
-                            <a href="#"><i class="fa-solid fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/photoshop.png">
-                        <div class="layer">
-                            <h3>photo Editing</h3>
-                            <p>Check out my instagram handle to observe my editing skills</p>
-                            <a href="#"><i class="fa-solid fa-link"></i></a>
-                        </div>
-                    </div>
+
+        <!-- Tour Button -->
+        <div class="absolute top-6 right-6 pointer-events-auto">
+            <button id="start-tour-btn" onclick="startTour()" class="glass-panel btn-pulse px-6 py-3 rounded-full text-teal-300 font-adventure font-bold hover:bg-teal-900/50 transition flex items-center gap-2">
+                <span>⛵</span> START JOURNEY
+            </button>
+        </div>
+
+        <!-- Interaction Hint -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none opacity-60" id="hint-text">
+            <p class="text-teal-100 font-adventure text-lg tracking-widest animate-pulse">DRAG TO ROTATE • HOVER TO EXPLORE</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="pointer-events-auto text-right">
+            <div class="glass-panel inline-block rounded-lg px-4 py-2">
+                <span class="text-teal-400 font-adventure text-sm">Log Pose: </span>
+                <span class="text-gray-300 text-sm" id="coordinates">Setting Course...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Card -->
+    <div id="info-card" class="hidden-card fixed top-1/2 right-10 transform -translate-y-1/2 w-80 md:w-96 z-50">
+        <div class="glass-panel p-6 rounded-xl relative border-t-4 border-teal-500">
+            <div class="absolute -top-3 left-6 bg-teal-700 text-white px-3 py-0.5 rounded text-xs font-bold tracking-wide shadow-lg">
+                <span id="card-category">PROJECT</span>
+            </div>
+            
+            <div class="flex items-start justify-between mb-4 mt-2">
+                <div>
+                    <h2 id="card-title" class="text-xl font-bold text-white leading-tight">PROJECT NAME</h2>
+                    <span id="card-type" class="text-xs font-medium text-teal-400 tracking-wider uppercase">TECH STACK</span>
+                </div>
+                <div class="bg-gray-800 p-2 rounded-lg">
+                    <span id="card-icon" class="text-2xl">🗺️</span>
                 </div>
             </div>
+
+            <p id="card-desc" class="text-sm text-gray-300 leading-relaxed mb-4 font-light">
+                Description goes here...
+            </p>
+
+            <div class="border-t border-gray-700 pt-3">
+                <h3 class="text-xs font-bold text-gray-500 uppercase mb-1">Key Details</h3>
+                <p id="card-tech" class="text-xs text-teal-300 font-mono">Python, Docker, etc.</p>
+            </div>
         </div>
-        <script src="index.js"></script>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
